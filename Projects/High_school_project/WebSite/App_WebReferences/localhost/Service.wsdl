@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpdateTicketPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SundayToThursday" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Weekend" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTicketPriceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchMovieByMoviesName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchMovieByMoviesNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchMovieByMoviesNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchMovieByGenre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Genre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchMovieByGenreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchMovieByGenreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchMovieByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchMovieByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchMovieByDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllMoviesTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllMoviesTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllMoviesTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllDatesTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllDatesTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllDatesTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllGenresTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllGenresTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllGenresTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TickectInvitationTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScreeningID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TickectInvitationTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TickectInvitationTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InviteSeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ScreeningID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SeatNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InviteSeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InviteSeatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuyingConfirmation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCardNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuyingConfirmationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuyingConfirmationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TotalCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScreeningID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TotalCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TotalCostResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSeatFree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SeatNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ScreeningID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSeatFreeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSeatFreeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieDirector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieDirectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieDirectorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieMainActor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieMainActorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieMainActorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieYearFilmed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieYearFilmedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MovieYearFilmedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieLength">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieLengthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MovieLengthResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieGenre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieGenreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieGenreResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MovieRateResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieDateStart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieDateStartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieDateStartResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieDateEnd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieDateEndResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieDateEndResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieAgeLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovieAgeLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MovieAgeLimitResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScreeningDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScreeningID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScreeningDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScreeningDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NumberOfSeatsInCinema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CinemaID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NumberOfSeatsInCinemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NumberOfSeatsInCinemaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CinemaKind">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CinemaID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CinemaKindResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CinemaKindResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCinemaID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScreeningID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCinemaIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetrieveCinemaIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Generes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GeneresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeneresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateTicketPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTicketPrice" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTicketPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTicketPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchMovieByMoviesNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchMovieByMoviesName" />
+  </wsdl:message>
+  <wsdl:message name="SearchMovieByMoviesNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchMovieByMoviesNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchMovieByGenreSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchMovieByGenre" />
+  </wsdl:message>
+  <wsdl:message name="SearchMovieByGenreSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchMovieByGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchMovieByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchMovieByDate" />
+  </wsdl:message>
+  <wsdl:message name="SearchMovieByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchMovieByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllMoviesTableSoapIn">
+    <wsdl:part name="parameters" element="tns:AllMoviesTable" />
+  </wsdl:message>
+  <wsdl:message name="AllMoviesTableSoapOut">
+    <wsdl:part name="parameters" element="tns:AllMoviesTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllDatesTableSoapIn">
+    <wsdl:part name="parameters" element="tns:AllDatesTable" />
+  </wsdl:message>
+  <wsdl:message name="AllDatesTableSoapOut">
+    <wsdl:part name="parameters" element="tns:AllDatesTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllGenresTableSoapIn">
+    <wsdl:part name="parameters" element="tns:AllGenresTable" />
+  </wsdl:message>
+  <wsdl:message name="AllGenresTableSoapOut">
+    <wsdl:part name="parameters" element="tns:AllGenresTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="TickectInvitationTableSoapIn">
+    <wsdl:part name="parameters" element="tns:TickectInvitationTable" />
+  </wsdl:message>
+  <wsdl:message name="TickectInvitationTableSoapOut">
+    <wsdl:part name="parameters" element="tns:TickectInvitationTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="InviteSeatSoapIn">
+    <wsdl:part name="parameters" element="tns:InviteSeat" />
+  </wsdl:message>
+  <wsdl:message name="InviteSeatSoapOut">
+    <wsdl:part name="parameters" element="tns:InviteSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuyingConfirmationSoapIn">
+    <wsdl:part name="parameters" element="tns:BuyingConfirmation" />
+  </wsdl:message>
+  <wsdl:message name="BuyingConfirmationSoapOut">
+    <wsdl:part name="parameters" element="tns:BuyingConfirmationResponse" />
+  </wsdl:message>
+  <wsdl:message name="TotalCostSoapIn">
+    <wsdl:part name="parameters" element="tns:TotalCost" />
+  </wsdl:message>
+  <wsdl:message name="TotalCostSoapOut">
+    <wsdl:part name="parameters" element="tns:TotalCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSeatFreeSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSeatFree" />
+  </wsdl:message>
+  <wsdl:message name="IsSeatFreeSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSeatFreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieDirectorSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieDirector" />
+  </wsdl:message>
+  <wsdl:message name="MovieDirectorSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieMainActorSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieMainActor" />
+  </wsdl:message>
+  <wsdl:message name="MovieMainActorSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieMainActorResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieYearFilmedSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieYearFilmed" />
+  </wsdl:message>
+  <wsdl:message name="MovieYearFilmedSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieYearFilmedResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieLengthSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieLength" />
+  </wsdl:message>
+  <wsdl:message name="MovieLengthSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieLengthResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieGenreSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieGenre" />
+  </wsdl:message>
+  <wsdl:message name="MovieGenreSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieRateSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieRate" />
+  </wsdl:message>
+  <wsdl:message name="MovieRateSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieDateStartSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieDateStart" />
+  </wsdl:message>
+  <wsdl:message name="MovieDateStartSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieDateStartResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieDateEndSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieDateEnd" />
+  </wsdl:message>
+  <wsdl:message name="MovieDateEndSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieDateEndResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovieAgeLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:MovieAgeLimit" />
+  </wsdl:message>
+  <wsdl:message name="MovieAgeLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:MovieAgeLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScreeningDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ScreeningDetails" />
+  </wsdl:message>
+  <wsdl:message name="ScreeningDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ScreeningDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="NumberOfSeatsInCinemaSoapIn">
+    <wsdl:part name="parameters" element="tns:NumberOfSeatsInCinema" />
+  </wsdl:message>
+  <wsdl:message name="NumberOfSeatsInCinemaSoapOut">
+    <wsdl:part name="parameters" element="tns:NumberOfSeatsInCinemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CinemaKindSoapIn">
+    <wsdl:part name="parameters" element="tns:CinemaKind" />
+  </wsdl:message>
+  <wsdl:message name="CinemaKindSoapOut">
+    <wsdl:part name="parameters" element="tns:CinemaKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCinemaIDSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCinemaID" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCinemaIDSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCinemaIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneresSoapIn">
+    <wsdl:part name="parameters" element="tns:Generes" />
+  </wsdl:message>
+  <wsdl:message name="GeneresSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneresResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="UpdateTicketPrice">
+      <wsdl:input message="tns:UpdateTicketPriceSoapIn" />
+      <wsdl:output message="tns:UpdateTicketPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input message="tns:RegisterSoapIn" />
+      <wsdl:output message="tns:RegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByMoviesName">
+      <wsdl:input message="tns:SearchMovieByMoviesNameSoapIn" />
+      <wsdl:output message="tns:SearchMovieByMoviesNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByGenre">
+      <wsdl:input message="tns:SearchMovieByGenreSoapIn" />
+      <wsdl:output message="tns:SearchMovieByGenreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByDate">
+      <wsdl:input message="tns:SearchMovieByDateSoapIn" />
+      <wsdl:output message="tns:SearchMovieByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllMoviesTable">
+      <wsdl:input message="tns:AllMoviesTableSoapIn" />
+      <wsdl:output message="tns:AllMoviesTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllDatesTable">
+      <wsdl:input message="tns:AllDatesTableSoapIn" />
+      <wsdl:output message="tns:AllDatesTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllGenresTable">
+      <wsdl:input message="tns:AllGenresTableSoapIn" />
+      <wsdl:output message="tns:AllGenresTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TickectInvitationTable">
+      <wsdl:input message="tns:TickectInvitationTableSoapIn" />
+      <wsdl:output message="tns:TickectInvitationTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InviteSeat">
+      <wsdl:input message="tns:InviteSeatSoapIn" />
+      <wsdl:output message="tns:InviteSeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyingConfirmation">
+      <wsdl:input message="tns:BuyingConfirmationSoapIn" />
+      <wsdl:output message="tns:BuyingConfirmationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalCost">
+      <wsdl:input message="tns:TotalCostSoapIn" />
+      <wsdl:output message="tns:TotalCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSeatFree">
+      <wsdl:input message="tns:IsSeatFreeSoapIn" />
+      <wsdl:output message="tns:IsSeatFreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieDirector">
+      <wsdl:input message="tns:MovieDirectorSoapIn" />
+      <wsdl:output message="tns:MovieDirectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieMainActor">
+      <wsdl:input message="tns:MovieMainActorSoapIn" />
+      <wsdl:output message="tns:MovieMainActorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieYearFilmed">
+      <wsdl:input message="tns:MovieYearFilmedSoapIn" />
+      <wsdl:output message="tns:MovieYearFilmedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieLength">
+      <wsdl:input message="tns:MovieLengthSoapIn" />
+      <wsdl:output message="tns:MovieLengthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieGenre">
+      <wsdl:input message="tns:MovieGenreSoapIn" />
+      <wsdl:output message="tns:MovieGenreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieRate">
+      <wsdl:input message="tns:MovieRateSoapIn" />
+      <wsdl:output message="tns:MovieRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieDateStart">
+      <wsdl:input message="tns:MovieDateStartSoapIn" />
+      <wsdl:output message="tns:MovieDateStartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieDateEnd">
+      <wsdl:input message="tns:MovieDateEndSoapIn" />
+      <wsdl:output message="tns:MovieDateEndSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieAgeLimit">
+      <wsdl:input message="tns:MovieAgeLimitSoapIn" />
+      <wsdl:output message="tns:MovieAgeLimitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScreeningDetails">
+      <wsdl:input message="tns:ScreeningDetailsSoapIn" />
+      <wsdl:output message="tns:ScreeningDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfSeatsInCinema">
+      <wsdl:input message="tns:NumberOfSeatsInCinemaSoapIn" />
+      <wsdl:output message="tns:NumberOfSeatsInCinemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CinemaKind">
+      <wsdl:input message="tns:CinemaKindSoapIn" />
+      <wsdl:output message="tns:CinemaKindSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCinemaID">
+      <wsdl:input message="tns:RetrieveCinemaIDSoapIn" />
+      <wsdl:output message="tns:RetrieveCinemaIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Generes">
+      <wsdl:input message="tns:GeneresSoapIn" />
+      <wsdl:output message="tns:GeneresSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTicketPrice">
+      <soap:operation soapAction="http://tempuri.org/UpdateTicketPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByMoviesName">
+      <soap:operation soapAction="http://tempuri.org/SearchMovieByMoviesName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByGenre">
+      <soap:operation soapAction="http://tempuri.org/SearchMovieByGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByDate">
+      <soap:operation soapAction="http://tempuri.org/SearchMovieByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllMoviesTable">
+      <soap:operation soapAction="http://tempuri.org/AllMoviesTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllDatesTable">
+      <soap:operation soapAction="http://tempuri.org/AllDatesTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllGenresTable">
+      <soap:operation soapAction="http://tempuri.org/AllGenresTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TickectInvitationTable">
+      <soap:operation soapAction="http://tempuri.org/TickectInvitationTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InviteSeat">
+      <soap:operation soapAction="http://tempuri.org/InviteSeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyingConfirmation">
+      <soap:operation soapAction="http://tempuri.org/BuyingConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalCost">
+      <soap:operation soapAction="http://tempuri.org/TotalCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSeatFree">
+      <soap:operation soapAction="http://tempuri.org/IsSeatFree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieDirector">
+      <soap:operation soapAction="http://tempuri.org/MovieDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieMainActor">
+      <soap:operation soapAction="http://tempuri.org/MovieMainActor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieYearFilmed">
+      <soap:operation soapAction="http://tempuri.org/MovieYearFilmed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieLength">
+      <soap:operation soapAction="http://tempuri.org/MovieLength" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieGenre">
+      <soap:operation soapAction="http://tempuri.org/MovieGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieRate">
+      <soap:operation soapAction="http://tempuri.org/MovieRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieDateStart">
+      <soap:operation soapAction="http://tempuri.org/MovieDateStart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieDateEnd">
+      <soap:operation soapAction="http://tempuri.org/MovieDateEnd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieAgeLimit">
+      <soap:operation soapAction="http://tempuri.org/MovieAgeLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScreeningDetails">
+      <soap:operation soapAction="http://tempuri.org/ScreeningDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfSeatsInCinema">
+      <soap:operation soapAction="http://tempuri.org/NumberOfSeatsInCinema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CinemaKind">
+      <soap:operation soapAction="http://tempuri.org/CinemaKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCinemaID">
+      <soap:operation soapAction="http://tempuri.org/RetrieveCinemaID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Generes">
+      <soap:operation soapAction="http://tempuri.org/Generes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTicketPrice">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTicketPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByMoviesName">
+      <soap12:operation soapAction="http://tempuri.org/SearchMovieByMoviesName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByGenre">
+      <soap12:operation soapAction="http://tempuri.org/SearchMovieByGenre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMovieByDate">
+      <soap12:operation soapAction="http://tempuri.org/SearchMovieByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllMoviesTable">
+      <soap12:operation soapAction="http://tempuri.org/AllMoviesTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllDatesTable">
+      <soap12:operation soapAction="http://tempuri.org/AllDatesTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllGenresTable">
+      <soap12:operation soapAction="http://tempuri.org/AllGenresTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TickectInvitationTable">
+      <soap12:operation soapAction="http://tempuri.org/TickectInvitationTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InviteSeat">
+      <soap12:operation soapAction="http://tempuri.org/InviteSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyingConfirmation">
+      <soap12:operation soapAction="http://tempuri.org/BuyingConfirmation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalCost">
+      <soap12:operation soapAction="http://tempuri.org/TotalCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSeatFree">
+      <soap12:operation soapAction="http://tempuri.org/IsSeatFree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieDirector">
+      <soap12:operation soapAction="http://tempuri.org/MovieDirector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieMainActor">
+      <soap12:operation soapAction="http://tempuri.org/MovieMainActor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieYearFilmed">
+      <soap12:operation soapAction="http://tempuri.org/MovieYearFilmed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieLength">
+      <soap12:operation soapAction="http://tempuri.org/MovieLength" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieGenre">
+      <soap12:operation soapAction="http://tempuri.org/MovieGenre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieRate">
+      <soap12:operation soapAction="http://tempuri.org/MovieRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieDateStart">
+      <soap12:operation soapAction="http://tempuri.org/MovieDateStart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieDateEnd">
+      <soap12:operation soapAction="http://tempuri.org/MovieDateEnd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieAgeLimit">
+      <soap12:operation soapAction="http://tempuri.org/MovieAgeLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScreeningDetails">
+      <soap12:operation soapAction="http://tempuri.org/ScreeningDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfSeatsInCinema">
+      <soap12:operation soapAction="http://tempuri.org/NumberOfSeatsInCinema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CinemaKind">
+      <soap12:operation soapAction="http://tempuri.org/CinemaKind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCinemaID">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveCinemaID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Generes">
+      <soap12:operation soapAction="http://tempuri.org/Generes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:1991/WService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:1991/WService/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

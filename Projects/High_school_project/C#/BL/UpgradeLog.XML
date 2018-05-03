@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="BL">
+</Property><Property Name="Solution File" Value="E:\305551814\MoviesProject\C#\BL\BL.sln">
+</Property><Property Name="User Options File" Value="E:\305551814\MoviesProject\C#\BL\BL.suo">
+</Property><Property Name="Date" Value="Thursday, July 18, 2013">
+</Property><Property Name="Time" Value="19:49 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="BL.sln" Description="File successfully backed up as E:\305551814\MoviesProject\C#\BL\Backup\BL.sln">
+</Event><Event ErrorLevel="0" Project="" Source="BL.suo" Description="File successfully backed up as E:\305551814\MoviesProject\C#\BL\Backup\BL.suo">
+</Event><Event ErrorLevel="0" Project="BL" Source="BL\BL.csproj" Description="Project file successfully backed up as E:\305551814\MoviesProject\C#\BL\Backup\BL\BL.csproj">
+</Event><Event ErrorLevel="0" Project="BL" Source="BL\BL.csproj.user" Description="Project user file successfully backed up as E:\305551814\MoviesProject\C#\BL\Backup\BL\BL.csproj.user">
+</Event><Event ErrorLevel="0" Project="BL" Source="BL\AdminMng.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\BL\Backup\BL\AdminMng.cs">
+</Event><Event ErrorLevel="0" Project="BL" Source="BL\Customer.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\BL\Backup\BL\Customer.cs">
+</Event><Event ErrorLevel="0" Project="BL" Source="BL\WebSystem.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\BL\Backup\BL\WebSystem.cs">
+</Event><Event ErrorLevel="0" Project="BL" Source="BL\BL.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="BL" Source="BL\BL.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="BL.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="BL.sln" Description="Converted">
+</Event></UpgradeLog>

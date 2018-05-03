@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SqlProjectCsharp">
+</Property><Property Name="Solution File" Value="E:\305551814\MoviesProject\C#\SqlProjectCsharp\SqlProjectCsharp.sln">
+</Property><Property Name="User Options File" Value="E:\305551814\MoviesProject\C#\SqlProjectCsharp\SqlProjectCsharp.suo">
+</Property><Property Name="Date" Value="Thursday, July 18, 2013">
+</Property><Property Name="Time" Value="17:30 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="SqlProjectCsharp.sln" Description="File successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp.sln">
+</Event><Event ErrorLevel="0" Project="" Source="SqlProjectCsharp.suo" Description="File successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp.suo">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\SqlProjectCsharp.csproj" Description="Project file successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp\SqlProjectCsharp.csproj">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\SqlProjectCsharp.csproj.user" Description="Project user file successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp\SqlProjectCsharp.csproj.user">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\CinemaClass.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp\CinemaClass.cs">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\Invitation.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp\Invitation.cs">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\Movies.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp\Movies.cs">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\Screening.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp\Screening.cs">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\SqlHelper.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp\SqlHelper.cs">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\Users.cs" Description="File successfully backed up as E:\305551814\MoviesProject\C#\SqlProjectCsharp\Backup\SqlProjectCsharp\Users.cs">
+</Event><Event ErrorLevel="0" Project="SqlProjectCsharp" Source="SqlProjectCsharp\SqlProjectCsharp.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="SqlProjectCsharp" Source="SqlProjectCsharp\SqlProjectCsharp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SqlProjectCsharp.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="SqlProjectCsharp.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpdateTicketPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SundayToThursday" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Weekend" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTicketPriceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="VipPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VipCost" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VipPriceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertNewMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Director" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MainActor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="YearFilmed" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Genre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateEnd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AgeLimit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewMovieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertNewMovieResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOldMovies">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteOldMoviesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteOldMoviesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDateEndOfMovieAndDeleteEmptyScreenings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateEnd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDateEndOfMovieAndDeleteEmptyScreeningsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDateEndOfMovieAndDeleteEmptyScreeningsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewScreening">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CinemaID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewScreeningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertNewScreeningResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cinema">
+        <s:complexType />
+      </s:element>
+      <s:element name="CinemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CinemaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewCinema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Genre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Seats" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Kind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewCinemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertNewCinemaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Details">
+        <s:complexType />
+      </s:element>
+      <s:element name="DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllUsersDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllUsersDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllUsersDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NumOfInvitationsForScreeningID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScreeningID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NumOfInvitationsForScreeningIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NumOfInvitationsForScreeningIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScreeningID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScreeningID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScreeningIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteScreeningIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllScreeningsIDForMovieID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllScreeningsIDForMovieIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllScreeningsIDForMovieIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateTicketPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTicketPrice" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTicketPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTicketPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="VipPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:VipPrice" />
+  </wsdl:message>
+  <wsdl:message name="VipPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:VipPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNewMovie" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNewMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOldMoviesSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOldMovies" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOldMoviesSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOldMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDateEndOfMovieAndDeleteEmptyScreeningsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDateEndOfMovieAndDeleteEmptyScreenings" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDateEndOfMovieAndDeleteEmptyScreeningsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDateEndOfMovieAndDeleteEmptyScreeningsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewScreeningSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNewScreening" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewScreeningSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNewScreeningResponse" />
+  </wsdl:message>
+  <wsdl:message name="CinemaSoapIn">
+    <wsdl:part name="parameters" element="tns:Cinema" />
+  </wsdl:message>
+  <wsdl:message name="CinemaSoapOut">
+    <wsdl:part name="parameters" element="tns:CinemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewCinemaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNewCinema" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewCinemaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNewCinemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Details" />
+  </wsdl:message>
+  <wsdl:message name="DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllUsersDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:AllUsersDetails" />
+  </wsdl:message>
+  <wsdl:message name="AllUsersDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:AllUsersDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="NumOfInvitationsForScreeningIDSoapIn">
+    <wsdl:part name="parameters" element="tns:NumOfInvitationsForScreeningID" />
+  </wsdl:message>
+  <wsdl:message name="NumOfInvitationsForScreeningIDSoapOut">
+    <wsdl:part name="parameters" element="tns:NumOfInvitationsForScreeningIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScreeningIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteScreeningID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScreeningIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteScreeningIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllScreeningsIDForMovieIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AllScreeningsIDForMovieID" />
+  </wsdl:message>
+  <wsdl:message name="AllScreeningsIDForMovieIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AllScreeningsIDForMovieIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AdminActionsSoap">
+    <wsdl:operation name="UpdateTicketPrice">
+      <wsdl:input message="tns:UpdateTicketPriceSoapIn" />
+      <wsdl:output message="tns:UpdateTicketPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VipPrice">
+      <wsdl:input message="tns:VipPriceSoapIn" />
+      <wsdl:output message="tns:VipPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewMovie">
+      <wsdl:input message="tns:InsertNewMovieSoapIn" />
+      <wsdl:output message="tns:InsertNewMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOldMovies">
+      <wsdl:input message="tns:DeleteOldMoviesSoapIn" />
+      <wsdl:output message="tns:DeleteOldMoviesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateEndOfMovieAndDeleteEmptyScreenings">
+      <wsdl:input message="tns:UpdateDateEndOfMovieAndDeleteEmptyScreeningsSoapIn" />
+      <wsdl:output message="tns:UpdateDateEndOfMovieAndDeleteEmptyScreeningsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewScreening">
+      <wsdl:input message="tns:InsertNewScreeningSoapIn" />
+      <wsdl:output message="tns:InsertNewScreeningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cinema">
+      <wsdl:input message="tns:CinemaSoapIn" />
+      <wsdl:output message="tns:CinemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewCinema">
+      <wsdl:input message="tns:InsertNewCinemaSoapIn" />
+      <wsdl:output message="tns:InsertNewCinemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Details">
+      <wsdl:input message="tns:DetailsSoapIn" />
+      <wsdl:output message="tns:DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllUsersDetails">
+      <wsdl:input message="tns:AllUsersDetailsSoapIn" />
+      <wsdl:output message="tns:AllUsersDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input message="tns:DeleteUserSoapIn" />
+      <wsdl:output message="tns:DeleteUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NumOfInvitationsForScreeningID">
+      <wsdl:input message="tns:NumOfInvitationsForScreeningIDSoapIn" />
+      <wsdl:output message="tns:NumOfInvitationsForScreeningIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScreeningID">
+      <wsdl:input message="tns:DeleteScreeningIDSoapIn" />
+      <wsdl:output message="tns:DeleteScreeningIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllScreeningsIDForMovieID">
+      <wsdl:input message="tns:AllScreeningsIDForMovieIDSoapIn" />
+      <wsdl:output message="tns:AllScreeningsIDForMovieIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdminActionsSoap" type="tns:AdminActionsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTicketPrice">
+      <soap:operation soapAction="http://tempuri.org/UpdateTicketPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VipPrice">
+      <soap:operation soapAction="http://tempuri.org/VipPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewMovie">
+      <soap:operation soapAction="http://tempuri.org/InsertNewMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOldMovies">
+      <soap:operation soapAction="http://tempuri.org/DeleteOldMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateEndOfMovieAndDeleteEmptyScreenings">
+      <soap:operation soapAction="http://tempuri.org/UpdateDateEndOfMovieAndDeleteEmptyScreenings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewScreening">
+      <soap:operation soapAction="http://tempuri.org/InsertNewScreening" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cinema">
+      <soap:operation soapAction="http://tempuri.org/Cinema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewCinema">
+      <soap:operation soapAction="http://tempuri.org/InsertNewCinema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Details">
+      <soap:operation soapAction="http://tempuri.org/Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllUsersDetails">
+      <soap:operation soapAction="http://tempuri.org/AllUsersDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumOfInvitationsForScreeningID">
+      <soap:operation soapAction="http://tempuri.org/NumOfInvitationsForScreeningID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScreeningID">
+      <soap:operation soapAction="http://tempuri.org/DeleteScreeningID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllScreeningsIDForMovieID">
+      <soap:operation soapAction="http://tempuri.org/AllScreeningsIDForMovieID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AdminActionsSoap12" type="tns:AdminActionsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTicketPrice">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTicketPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VipPrice">
+      <soap12:operation soapAction="http://tempuri.org/VipPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewMovie">
+      <soap12:operation soapAction="http://tempuri.org/InsertNewMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOldMovies">
+      <soap12:operation soapAction="http://tempuri.org/DeleteOldMovies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateEndOfMovieAndDeleteEmptyScreenings">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDateEndOfMovieAndDeleteEmptyScreenings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewScreening">
+      <soap12:operation soapAction="http://tempuri.org/InsertNewScreening" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cinema">
+      <soap12:operation soapAction="http://tempuri.org/Cinema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewCinema">
+      <soap12:operation soapAction="http://tempuri.org/InsertNewCinema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Details">
+      <soap12:operation soapAction="http://tempuri.org/Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllUsersDetails">
+      <soap12:operation soapAction="http://tempuri.org/AllUsersDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap12:operation soapAction="http://tempuri.org/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumOfInvitationsForScreeningID">
+      <soap12:operation soapAction="http://tempuri.org/NumOfInvitationsForScreeningID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScreeningID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteScreeningID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllScreeningsIDForMovieID">
+      <soap12:operation soapAction="http://tempuri.org/AllScreeningsIDForMovieID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdminActions">
+    <wsdl:port name="AdminActionsSoap" binding="tns:AdminActionsSoap">
+      <soap:address location="http://localhost:1991/WService/AdminActions.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AdminActionsSoap12" binding="tns:AdminActionsSoap12">
+      <soap12:address location="http://localhost:1991/WService/AdminActions.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

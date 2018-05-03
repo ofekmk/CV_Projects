@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RetrieveUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetrieveUserIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveFirstName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveFirstNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveFirstNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveFLastName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveFLastNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveFLastNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAgeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetrieveAgeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveCountryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveGender">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveGenderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveGenderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserProfileUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserProfileUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserProfileUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NewPasswordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserTicketView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserTicketViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserTicketViewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelInvite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InvitationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelInviteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelInviteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCreditNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCreditNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetrieveCreditNumResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveUserID" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveFirstNameSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveFirstName" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveFirstNameSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveFirstNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveFLastNameSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveFLastName" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveFLastNameSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveFLastNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAgeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAge" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAgeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCountry" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveGenderSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveGender" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveGenderSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveGenderResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveEmail" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserProfileUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:UserProfileUpdate" />
+  </wsdl:message>
+  <wsdl:message name="UserProfileUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UserProfileUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserPassword" />
+  </wsdl:message>
+  <wsdl:message name="UserPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:NewPassword" />
+  </wsdl:message>
+  <wsdl:message name="NewPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:NewPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserTicketViewSoapIn">
+    <wsdl:part name="parameters" element="tns:UserTicketView" />
+  </wsdl:message>
+  <wsdl:message name="UserTicketViewSoapOut">
+    <wsdl:part name="parameters" element="tns:UserTicketViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelInviteSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelInvite" />
+  </wsdl:message>
+  <wsdl:message name="CancelInviteSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelInviteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCreditNumSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCreditNum" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCreditNumSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCreditNumResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_UserProfileSoap">
+    <wsdl:operation name="RetrieveUserID">
+      <wsdl:input message="tns:RetrieveUserIDSoapIn" />
+      <wsdl:output message="tns:RetrieveUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFirstName">
+      <wsdl:input message="tns:RetrieveFirstNameSoapIn" />
+      <wsdl:output message="tns:RetrieveFirstNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFLastName">
+      <wsdl:input message="tns:RetrieveFLastNameSoapIn" />
+      <wsdl:output message="tns:RetrieveFLastNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAge">
+      <wsdl:input message="tns:RetrieveAgeSoapIn" />
+      <wsdl:output message="tns:RetrieveAgeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCountry">
+      <wsdl:input message="tns:RetrieveCountrySoapIn" />
+      <wsdl:output message="tns:RetrieveCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveGender">
+      <wsdl:input message="tns:RetrieveGenderSoapIn" />
+      <wsdl:output message="tns:RetrieveGenderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveEmail">
+      <wsdl:input message="tns:RetrieveEmailSoapIn" />
+      <wsdl:output message="tns:RetrieveEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserProfileUpdate">
+      <wsdl:input message="tns:UserProfileUpdateSoapIn" />
+      <wsdl:output message="tns:UserProfileUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserPassword">
+      <wsdl:input message="tns:UserPasswordSoapIn" />
+      <wsdl:output message="tns:UserPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewPassword">
+      <wsdl:input message="tns:NewPasswordSoapIn" />
+      <wsdl:output message="tns:NewPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserTicketView">
+      <wsdl:input message="tns:UserTicketViewSoapIn" />
+      <wsdl:output message="tns:UserTicketViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvite">
+      <wsdl:input message="tns:CancelInviteSoapIn" />
+      <wsdl:output message="tns:CancelInviteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCreditNum">
+      <wsdl:input message="tns:RetrieveCreditNumSoapIn" />
+      <wsdl:output message="tns:RetrieveCreditNumSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_UserProfileSoap" type="tns:WS_UserProfileSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveUserID">
+      <soap:operation soapAction="http://tempuri.org/RetrieveUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFirstName">
+      <soap:operation soapAction="http://tempuri.org/RetrieveFirstName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFLastName">
+      <soap:operation soapAction="http://tempuri.org/RetrieveFLastName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAge">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCountry">
+      <soap:operation soapAction="http://tempuri.org/RetrieveCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveGender">
+      <soap:operation soapAction="http://tempuri.org/RetrieveGender" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveEmail">
+      <soap:operation soapAction="http://tempuri.org/RetrieveEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserProfileUpdate">
+      <soap:operation soapAction="http://tempuri.org/UserProfileUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPassword">
+      <soap:operation soapAction="http://tempuri.org/UserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPassword">
+      <soap:operation soapAction="http://tempuri.org/NewPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserTicketView">
+      <soap:operation soapAction="http://tempuri.org/UserTicketView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvite">
+      <soap:operation soapAction="http://tempuri.org/CancelInvite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCreditNum">
+      <soap:operation soapAction="http://tempuri.org/RetrieveCreditNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_UserProfileSoap12" type="tns:WS_UserProfileSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveUserID">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFirstName">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveFirstName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFLastName">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveFLastName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAge">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCountry">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveGender">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveGender" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveEmail">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserProfileUpdate">
+      <soap12:operation soapAction="http://tempuri.org/UserProfileUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPassword">
+      <soap12:operation soapAction="http://tempuri.org/UserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPassword">
+      <soap12:operation soapAction="http://tempuri.org/NewPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserTicketView">
+      <soap12:operation soapAction="http://tempuri.org/UserTicketView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvite">
+      <soap12:operation soapAction="http://tempuri.org/CancelInvite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCreditNum">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveCreditNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_UserProfile">
+    <wsdl:port name="WS_UserProfileSoap" binding="tns:WS_UserProfileSoap">
+      <soap:address location="http://localhost:1991/WService/WS_UserProfile.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_UserProfileSoap12" binding="tns:WS_UserProfileSoap12">
+      <soap12:address location="http://localhost:1991/WService/WS_UserProfile.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

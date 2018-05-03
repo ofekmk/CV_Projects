@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckMoviesName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovieID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMoviesNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMoviesNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserIDRegister">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserIDRegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckUserIDRegisterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckMoviesNameSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMoviesName" />
+  </wsdl:message>
+  <wsdl:message name="CheckMoviesNameSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMoviesNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIDRegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserIDRegister" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIDRegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserIDRegisterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ValidationServiceSoap">
+    <wsdl:operation name="CheckMoviesName">
+      <wsdl:input message="tns:CheckMoviesNameSoapIn" />
+      <wsdl:output message="tns:CheckMoviesNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIDRegister">
+      <wsdl:input message="tns:CheckUserIDRegisterSoapIn" />
+      <wsdl:output message="tns:CheckUserIDRegisterSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ValidationServiceSoap" type="tns:ValidationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckMoviesName">
+      <soap:operation soapAction="http://tempuri.org/CheckMoviesName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIDRegister">
+      <soap:operation soapAction="http://tempuri.org/CheckUserIDRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ValidationServiceSoap12" type="tns:ValidationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckMoviesName">
+      <soap12:operation soapAction="http://tempuri.org/CheckMoviesName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIDRegister">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserIDRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValidationService">
+    <wsdl:port name="ValidationServiceSoap" binding="tns:ValidationServiceSoap">
+      <soap:address location="http://localhost:1991/WService/ValidationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ValidationServiceSoap12" binding="tns:ValidationServiceSoap12">
+      <soap12:address location="http://localhost:1991/WService/ValidationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
