@@ -1,6 +1,6 @@
 # MyProjects description
 
-"Assembler_demonstration_project" :
+"Assembler_demonstration_project" 
 
     *duration: 1 month
     *number of participants: myself
